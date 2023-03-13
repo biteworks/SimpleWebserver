@@ -52,6 +52,7 @@ namespace SimpleWebserver
             {".mng", "video/x-mng"},
             {".mov", "video/quicktime"},
             {".mp3", "audio/mpeg"},
+            {".mp4", "video/mpeg"},
             {".mpeg", "video/mpeg"},
             {".mpg", "video/mpeg"},
             {".msi", "application/octet-stream"},
@@ -63,6 +64,7 @@ namespace SimpleWebserver
             {".pl", "application/x-perl"},
             {".pm", "application/x-perl"},
             {".png", "image/png"},
+            {".svg", "image/svg+xml"},
             {".prc", "application/x-pilot"},
             {".ra", "audio/x-realaudio"},
             {".rar", "application/x-rar-compressed"},
@@ -105,6 +107,7 @@ namespace SimpleWebserver
             if (thread != null) throw new Exception("WebServer already active. (Call stop first)");
             thread = new Thread(Listen);
             thread.Start();
+            Console.WriteLine("Server started...");
         }
 
         public void Stop()
